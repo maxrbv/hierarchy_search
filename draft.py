@@ -1,3 +1,5 @@
+import sys
+
 import requests
 
 
@@ -11,5 +13,9 @@ def make_req(elem_id: str):
 
 
 if __name__ == "__main__":
-    elem_id = "zany-zircon-investigatess"
+    if len(sys.argv) != 2:
+        print("Usage: python draft.py elem_id")
+        sys.exit(1)
+
+    elem_id = str(sys.argv[1])
     make_req(elem_id)
